@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1071618034452-tek8n74i4pm6lt9868rn8d948990imim.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1071618034452-tek8n74i4pm6lt9868rn8d948990imim</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHOx5FJXE1odHkalM-VJ63zHqQRvoWwPE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1071618034452</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.KerollesRoshdi.Xplore</string>
+	<key>PROJECT_ID</key>
+	<string>xplore-ded68</string>
+	<key>STORAGE_BUCKET</key>
+	<string>xplore-ded68.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1071618034452:ios:43bc1831ba814355</string>
+	<key>DATABASE_URL</key>
+	<string>https://xplore-ded68.firebaseio.com</string>
+</dict>
+</plist>
