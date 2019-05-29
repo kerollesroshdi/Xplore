@@ -19,6 +19,8 @@
 		C501A580229DA1ED0061184C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C501A57F229DA1ED0061184C /* GoogleService-Info.plist */; };
 		C56B631F229DE5D1000A9614 /* CountriesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B631E229DE5D1000A9614 /* CountriesTableVC.swift */; };
 		C56B6321229DEA55000A9614 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B6320229DEA55000A9614 /* Validation.swift */; };
+		C5D6EDDF229EF2DC00AB4D5F /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6EDDE229EF2DC00AB4D5F /* CountryModel.swift */; };
+		C5D6EDE1229EF53800AB4D5F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6EDE0229EF53800AB4D5F /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		C501A57F229DA1ED0061184C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C56B631E229DE5D1000A9614 /* CountriesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableVC.swift; sourceTree = "<group>"; };
 		C56B6320229DEA55000A9614 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		C5D6EDDE229EF2DC00AB4D5F /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		C5D6EDE0229EF53800AB4D5F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E44B58E46B609788FBE5BB1A /* Pods_Xplore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xplore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 				C501A56F229D91D00061184C /* LaunchScreen.storyboard */,
 				C501A572229D91D00061184C /* Info.plist */,
 				C501A57F229DA1ED0061184C /* GoogleService-Info.plist */,
+				C5D6EDDE229EF2DC00AB4D5F /* CountryModel.swift */,
+				C5D6EDE0229EF53800AB4D5F /* Networking.swift */,
 			);
 			path = Xplore;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			files = (
 				C501A569229D91CF0061184C /* SignInVC.swift in Sources */,
 				C501A579229D9A680061184C /* SignUpVC.swift in Sources */,
+				C5D6EDDF229EF2DC00AB4D5F /* CountryModel.swift in Sources */,
+				C5D6EDE1229EF53800AB4D5F /* Networking.swift in Sources */,
 				C56B631F229DE5D1000A9614 /* CountriesTableVC.swift in Sources */,
 				C501A57D229D9C430061184C /* UIView-Customize.swift in Sources */,
 				C501A567229D91CF0061184C /* AppDelegate.swift in Sources */,

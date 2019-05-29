@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 class CountriesTableVC: UITableViewController {
     
-    
+    var countriesArray = [Country]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,7 +28,19 @@ class CountriesTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator()
+        activityIndicatorStart()
 
+        NetworkManager.shared().getCountries { (countries) in
+            self.countriesArray = countries
+            DispatchQueue.main.async { [weak self] in
+                self?.activityIndicatorStop()
+                self?.tableView.reloadData()
+            }
+            
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -54,23 +66,49 @@ class CountriesTableVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return countriesArray.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
 
         // Configure the cell...
-
+        
+        let country = countriesArray[indexPath.row]
+        
+        cell.textLabel?.text = country.Name
+        cell.detailTextLabel?.text = country.Region
+        
         return cell
     }
-    */
+    
+    
+    var indicator = UIActivityIndicatorView()
+    
+    func activityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator.style = .whiteLarge
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
+    func activityIndicatorStart() {
+        indicator.startAnimating()
+        indicator.backgroundColor = .white
+        indicator.color = .gray
+    }
+    
+    func activityIndicatorStop() {
+        indicator.stopAnimating()
+        indicator.hidesWhenStopped = true
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
