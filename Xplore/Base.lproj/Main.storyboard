@@ -142,7 +142,7 @@
         <!--Sign UpVC-->
         <scene sceneID="Xpc-lt-5Jf">
             <objects>
-                <viewController id="KlO-cz-xcJ" customClass="SignUpVC" customModule="Xplore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signup" id="KlO-cz-xcJ" customClass="SignUpVC" customModule="Xplore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7OO-Mh-7zZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,7 +242,7 @@
                                         <rect key="frame" x="253.5" y="0.0" width="56.5" height="48"/>
                                         <state key="normal" image="Arrow_right"/>
                                         <connections>
-                                            <action selector="signinButtonTapped:" destination="KlO-cz-xcJ" eventType="touchUpInside" id="34o-Z6-PRC"/>
+                                            <action selector="signupButtonTapped:" destination="KlO-cz-xcJ" eventType="touchUpInside" id="34o-Z6-PRC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -324,6 +324,7 @@
                         <outlet property="activityIndicator" destination="xiM-e3-5q8" id="oG0-1v-qBN"/>
                         <outlet property="confirmPasswordTextField" destination="kcY-MJ-0fT" id="6KZ-dj-dMx"/>
                         <outlet property="emailTextField" destination="Pfq-WJ-eez" id="Fz0-iZ-im3"/>
+                        <outlet property="facebookButton" destination="hWd-5V-5ET" id="fcx-2c-UwO"/>
                         <outlet property="googleButton" destination="yA7-h6-8JX" id="ato-cf-jha"/>
                         <outlet property="passwordTextField" destination="R9a-5S-Uyx" id="gRv-1a-DVg"/>
                     </connections>

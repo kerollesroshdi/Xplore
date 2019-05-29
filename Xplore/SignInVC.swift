@@ -32,10 +32,10 @@ class SignInVC: UIViewController {
             
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
                 
-                if error != nil {
-                    print("sign in Error : \(error.debugDescription)")
+                if let error = error {
+                    print("sign in Error : \(error.localizedDescription)")
                     self!.activityStop()
-                    showAlert(VC: self!, title: "Sign in Error", message: "wrong email or password", actionTitle: "OK")
+                    showAlert(VC: self!, title: "Sign in Error", message: (error.localizedDescription), actionTitle: "OK")
                 } else {
                     if let CountriesVC = self?.storyboard?.instantiateInitialViewController() {
                         self?.present(CountriesVC, animated: true, completion: nil)

@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
 
 class CountriesTableVC: UITableViewController {
     
@@ -38,6 +39,10 @@ class CountriesTableVC: UITableViewController {
     
     @IBAction func SignOutButtonTapped(_ sender: UIBarButtonItem) {
         try! Auth.auth().signOut()
+        
+        let FBlogutManager = FBSDKLoginManager()
+        FBlogutManager.logOut()
+        
         
 //        if let signinVC = self.storyboard?.instantiateViewController(withIdentifier: "signin") {
 //            self.navigationController?.present(signinVC, animated: true, completion: nil)

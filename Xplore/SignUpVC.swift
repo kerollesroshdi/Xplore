@@ -9,39 +9,31 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import FBSDKLoginKit
 
 class SignUpVC: UIViewController, GIDSignInUIDelegate {
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     @IBOutlet weak var googleButton: GIDSignInButton!
+    @IBOutlet weak var facebookButton: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hideKeyboardWhenTappedAround()
         activityIndicator.isHidden = true
-        // Do any additional setup after loading the view.
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    
-    @IBAction func signinButtonTapped(_ sender: UIButton) {
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
         
         activityStart()
         
@@ -58,14 +50,16 @@ class SignUpVC: UIViewController, GIDSignInUIDelegate {
                     
                     Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                         // ...
-                        if error != nil {
-                            print("sign up Error : \(error.debugDescription)")
+                        if let error = error {
+                            self.activityStop()
+                            print("sign up Error : \(error.localizedDescription)")
+                            showAlert(VC: self, title: "Signup Error", message: error.localizedDescription, actionTitle: "OK")
                         } else {
                             // user is signed up -> sign in user :
                             Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
 
-                                if error != nil {
-                                    print("sign in Error : \(error.debugDescription)")
+                                if let error = error {
+                                    print("sign in Error : \(error.localizedDescription)")
                                 } else {
                                     if let CountriesVC = self?.storyboard?.instantiateInitialViewController() {
                                         self?.present(CountriesVC, animated: true, completion: nil)
@@ -92,11 +86,35 @@ class SignUpVC: UIViewController, GIDSignInUIDelegate {
     }
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
+        
+        let LoginManager = FBSDKLoginManager()
+        LoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Failed to login: \(error.localizedDescription)")
+                return
+            }
+            guard let accessToken = FBSDKAccessToken.current() else {
+                print("Failed to get access token")
+                return
+            }
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+                if let error = error {
+                    showAlert(VC: self, title: "Facebook Login Error", message: error.localizedDescription, actionTitle: "OK")
+                    return
+                } else {
+                    if let CountriesVC = self.storyboard?.instantiateInitialViewController() {
+                        self.present(CountriesVC, animated: true, completion: nil)
+                    }
+                }
+
+            }
+        }
+        
     }
     
     @IBAction func googleButtonTapped(_ sender: UIButton) {
         GIDSignIn.sharedInstance().signIn()
-        activityStart()
     }
     
     

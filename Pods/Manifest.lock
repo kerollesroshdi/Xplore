@@ -1,4 +1,14 @@
 PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.38.1):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.38.1):
+    - FBSDKCoreKit
   - Firebase/Analytics (5.13.0):
     - Firebase/Core
   - Firebase/Auth (5.13.0):
@@ -81,6 +91,7 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -88,6 +99,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -103,6 +117,9 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
+  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
   Firebase: 6df9a6114bc9f106a98fe83d5438d4d9833c2019
   FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
   FirebaseAuth: 9299ab178271bec7426967b05b2718bb6fc31f17
@@ -117,6 +134,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 8e0385ed9eef76e8fe222908a0c1bf35816352b6
+PODFILE CHECKSUM: 6f9117a1f375fbde01213e5a86e413ffd6881745
 
 COCOAPODS: 1.5.2
