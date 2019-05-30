@@ -30,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             }
             // User is signed in
-            // ...
-            print("----------- user signed in ------- App delegate")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let CountriesVC = storyboard.instantiateInitialViewController() {
