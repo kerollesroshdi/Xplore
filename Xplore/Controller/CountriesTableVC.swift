@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class CountriesTableVC: UITableViewController {
     
+    var countryLetter = ""
     var countriesArray = [Country]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +34,7 @@ class CountriesTableVC: UITableViewController {
         activityIndicatorStart()
 
         NetworkManager.shared().getCountries { (countries) in
-            self.countriesArray = countries
+            self.countriesArray = countries.filter { String($0.Name.first ?? " ") == self.countryLetter }
             DispatchQueue.main.async { [weak self] in
                 self?.activityIndicatorStop()
                 self?.tableView.reloadData()

@@ -19,6 +19,8 @@
 		C501A580229DA1ED0061184C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C501A57F229DA1ED0061184C /* GoogleService-Info.plist */; };
 		C56B631F229DE5D1000A9614 /* CountriesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B631E229DE5D1000A9614 /* CountriesTableVC.swift */; };
 		C56B6321229DEA55000A9614 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56B6320229DEA55000A9614 /* Validation.swift */; };
+		C58EF82E22B9B472002B3C8E /* CountryLettersCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58EF82D22B9B472002B3C8E /* CountryLettersCollectionVC.swift */; };
+		C58EF83122B9B780002B3C8E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58EF83022B9B780002B3C8E /* LetterCell.swift */; };
 		C5B05190229F6BAC00583C46 /* CountryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0518F229F6BAC00583C46 /* CountryDetailsVC.swift */; };
 		C5D6EDDF229EF2DC00AB4D5F /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6EDDE229EF2DC00AB4D5F /* CountryModel.swift */; };
 		C5D6EDE1229EF53800AB4D5F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6EDE0229EF53800AB4D5F /* Networking.swift */; };
@@ -40,6 +42,8 @@
 		C501A57F229DA1ED0061184C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C56B631E229DE5D1000A9614 /* CountriesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableVC.swift; sourceTree = "<group>"; };
 		C56B6320229DEA55000A9614 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		C58EF82D22B9B472002B3C8E /* CountryLettersCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLettersCollectionVC.swift; sourceTree = "<group>"; };
+		C58EF83022B9B780002B3C8E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		C5B0518F229F6BAC00583C46 /* CountryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsVC.swift; sourceTree = "<group>"; };
 		C5D6EDDE229EF2DC00AB4D5F /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		C5D6EDE0229EF53800AB4D5F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B05192229F74BC00583C46 /* Model */,
+				C58EF82F22B9B75F002B3C8E /* View */,
 				C5B05191229F74A500583C46 /* Controller */,
 				C501A566229D91CF0061184C /* AppDelegate.swift */,
 				C501A56A229D91CF0061184C /* Main.storyboard */,
@@ -119,6 +124,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C58EF82F22B9B75F002B3C8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C58EF83022B9B780002B3C8E /* LetterCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C5B05191229F74A500583C46 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 				C501A578229D9A680061184C /* SignUpVC.swift */,
 				C56B631E229DE5D1000A9614 /* CountriesTableVC.swift */,
 				C5B0518F229F6BAC00583C46 /* CountryDetailsVC.swift */,
+				C58EF82D22B9B472002B3C8E /* CountryLettersCollectionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -292,9 +306,11 @@
 				C5D6EDE1229EF53800AB4D5F /* Networking.swift in Sources */,
 				C56B631F229DE5D1000A9614 /* CountriesTableVC.swift in Sources */,
 				C501A57D229D9C430061184C /* UIView-Customize.swift in Sources */,
+				C58EF83122B9B780002B3C8E /* LetterCell.swift in Sources */,
 				C501A567229D91CF0061184C /* AppDelegate.swift in Sources */,
 				C501A57E229D9C430061184C /* KeyboardModifications.swift in Sources */,
 				C56B6321229DEA55000A9614 /* Validation.swift in Sources */,
+				C58EF82E22B9B472002B3C8E /* CountryLettersCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

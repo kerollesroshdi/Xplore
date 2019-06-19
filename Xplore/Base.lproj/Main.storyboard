@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wd5-K9-M0f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h5b-qy-ky8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -336,7 +336,7 @@
         <!--Xplore Countries-->
         <scene sceneID="c7g-Ee-RV8">
             <objects>
-                <tableViewController id="KK1-Zc-rJ0" customClass="CountriesTableVC" customModule="Xplore" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="countriesTableVC" id="KK1-Zc-rJ0" customClass="CountriesTableVC" customModule="Xplore" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="erO-dR-8GQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,6 +387,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxV-iU-MGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2650.4000000000001" y="-3.1484257871064472"/>
+        </scene>
+        <!--Select Country Letter-->
+        <scene sceneID="U7t-ux-bHG">
+            <objects>
+                <collectionViewController id="Q5F-v7-vVk" customClass="CountryLettersCollectionVC" customModule="Xplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8KE-4C-DYC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gj5-cK-4Mi">
+                            <size key="itemSize" width="85" height="109"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="letterCell" id="BAy-HZ-eog" customClass="LetterCell" customModule="Xplore" customModuleProvider="target">
+                                <rect key="frame" x="5" y="10" width="85" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="109"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bf-NM-nVg">
+                                            <rect key="frame" x="28.5" y="-27.5" width="28" height="55"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.45302033419999999" green="0.72353166339999997" blue="0.99996858840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2bf-NM-nVg" firstAttribute="centerX" secondItem="BAy-HZ-eog" secondAttribute="centerX" id="4O5-8a-bmK"/>
+                                    <constraint firstItem="2bf-NM-nVg" firstAttribute="centerY" secondItem="BAy-HZ-eog" secondAttribute="centerY" id="vdq-Md-euw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="letter" destination="2bf-NM-nVg" id="CMN-ji-taz"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Q5F-v7-vVk" id="3jf-5k-Snj"/>
+                            <outlet property="delegate" destination="Q5F-v7-vVk" id="kDR-lG-73r"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Select Country Letter" id="BIY-XF-oEK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="signout" id="t62-Mv-xq8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logoutButtonTaped:" destination="Q5F-v7-vVk" id="7Q5-NC-T1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd2-s0-t5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648.8000000000002" y="780.35982008995506"/>
         </scene>
         <!--Country DetailsVC-->
         <scene sceneID="9K6-1r-xwN">
@@ -510,7 +573,7 @@
         <!--Navigation Controller-->
         <scene sceneID="P1X-gt-K7L">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wd5-K9-M0f" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="XploreCountriesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Wd5-K9-M0f" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="gSe-hP-eEo">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -534,6 +597,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0H-Eo-yHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1709.5999999999999" y="-3.1484257871064472"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wHg-WA-Zh1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h5b-qy-ky8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="iYu-38-dj5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q5F-v7-vVk" kind="relationship" relationship="rootViewController" id="Wqw-f0-6qL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awB-31-OeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="781"/>
         </scene>
     </scenes>
     <resources>
